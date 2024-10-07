@@ -1,6 +1,14 @@
-import { ITrainer } from "./interfaces/ITrainer";
-import { IClient } from "./interfaces/IClient";
+import express from "express";
 import { assignTrainer } from "./services/assignTrainer";
+import { IClient } from "./interfaces/IClient";
+import { ITrainer } from "./interfaces/ITrainer";
+import path from "path";
+
+const app = express();
+const port = 3000;
+
+// Middleware to parse json
+app.use(express.static(path.join(__dirname, "../public")));
 
 const trainers: ITrainer[] = [
   { name: "A", reputation: 4.5, placesAvailable: 1 },
@@ -22,4 +30,11 @@ const clients: IClient[] = [
   { name: "z", importanceReputation: 2.5 },
 ];
 
-assignTrainer(trainers, clients);
+app.get("/assign", (req, res) => {
+  const assignments = assignTrainer(trainers, clients);
+  res.json(assignments);
+});
+
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});

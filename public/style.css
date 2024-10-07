@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#assignments {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.assignments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.assignments-table th,
+.assignments-table td {
+  border: 1px solid #000000; /* Borde negro */
+  padding: 10px;
+  text-align: center;
+}
+
+.assignments-table th {
+  background-color: #e7f3ff;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+.assignments-table tr:nth-child(even) {
+  background-color: #f2f9ff;
+}
+
+.assignments-table tr:hover {
+  background-color: #d1ecff;
+}
