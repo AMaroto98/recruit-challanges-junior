@@ -20,4 +20,5 @@ export const assignTrainer = (trainers: ITrainer[], clients: IClient[]) => {
     assignmentsFinals[client.name] = assignedTrainer;
   }
   console.log(assignmentsFinals);
+  return assignmentsFinals;
 };
